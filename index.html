@@ -11,25 +11,28 @@
 
     <script>
 
+        var playerScore;
+        var computerScore;
+
         function computerPlay() {
 
             let computerChoice = getRandomInt(3);
             var Result = 'blank';
-            console.log(computerChoice)
+            // console.log(computerChoice)
             switch (computerChoice) {
             case 0:
                 Result = 'Rock';
-                console.log(Result);
+                // console.log(Result);
                 return Result;
                 break;
             case 1:
                 Result = 'Paper'
-                console.log(Result);
+                // console.log(Result);
                 return Result;
                 break;
             default:
                 Result = 'Scissors'
-                console.log(Result);
+                // console.log(Result);
                 return Result;
                 break;
             }
@@ -42,28 +45,34 @@
             let computerChoiceResult = computerPlay();
 
             if (humanChoice == 'rock' && computerChoiceResult == 'Paper') { 
-                console.log('You win, Rock beats paper') 
+                console.log('You win, Rock beats paper');
+                playerScore++; 
             }
             else if (humanChoice === 'rock' && computerChoiceResult === 'Rock') {
                 console.log('It is a tie')
             }
             else if (humanChoice === 'rock' && computerChoiceResult === 'Scissors') {
-                console.log('You lose')
+                console.log('You lose');
+                computerScore++;
             }
             else if (humanChoice === 'paper' && computerChoiceResult === 'Paper') {
                 console.log('It is a tie')
             }
             else if (humanChoice === 'paper' && computerChoiceResult === 'Rock') {
-                console.log('You win')
+                console.log('You win');
+                playerScore++; 
             }
             else if (humanChoice === 'paper' && computerChoiceResult === 'Scissors') {
-                console.log('You lose')
+                console.log('You lose');
+                computerScore++;
             }
             else if (humanChoice === 'scissors' && computerChoiceResult === 'Paper') {
-                console.log('You win')
+                console.log('You win');
+                playerScore++; 
             }
             else if (humanChoice === 'scissors' && computerChoiceResult === 'Rock') {
-                console.log('You lose')
+                console.log('You lose');
+                computerScore++;
             }
             else if (humanChoice === 'scissors' && computerChoiceResult === 'Scissors') {
                 console.log('It is a tie')
@@ -77,8 +86,27 @@
             return Math.floor(Math.random() * max);
         }           
 
-        // computerPlay();
-        humanPlay('paper');
+        function playRound() {
+            playerScore = 0;
+            computerScore = 0;
+            for (let i = 0; i < 2; i++) {
+                let playerChoice = window.prompt("Choice either Rock, Paper or Scissors");
+                humanPlay(playerChoice);
+                console.log(playerScore);
+                console.log(computerScore);
+            }
+
+            if (playerScore > computerScore) {console.log('You win, baby!')}
+            else if (computerScore > playerScore) {console.log('You lose, :(')}
+            else {console.log('It is a tie')}
+        }
+
+
+
+
+
+
+        // humanPlay('paper');
 
 
     </script>
