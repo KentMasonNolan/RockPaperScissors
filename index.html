@@ -45,13 +45,31 @@
                 console.log('You win, Rock beats paper') 
             }
             else if (humanChoice === 'rock' && computerChoiceResult === 'Rock') {
-                console.log('It was a tie')
+                console.log('It is a tie')
             }
             else if (humanChoice === 'rock' && computerChoiceResult === 'Scissors') {
                 console.log('You lose')
             }
+            else if (humanChoice === 'paper' && computerChoiceResult === 'Paper') {
+                console.log('It is a tie')
+            }
+            else if (humanChoice === 'paper' && computerChoiceResult === 'Rock') {
+                console.log('You win')
+            }
+            else if (humanChoice === 'paper' && computerChoiceResult === 'Scissors') {
+                console.log('You lose')
+            }
+            else if (humanChoice === 'scissors' && computerChoiceResult === 'Paper') {
+                console.log('You win')
+            }
+            else if (humanChoice === 'scissors' && computerChoiceResult === 'Rock') {
+                console.log('You lose')
+            }
+            else if (humanChoice === 'scissors' && computerChoiceResult === 'Scissors') {
+                console.log('It is a tie')
+            }
             else { 
-                console.log('catch all') 
+                console.log('Invalid input') 
             }
         }
 
@@ -60,7 +78,7 @@
         }           
 
         // computerPlay();
-        humanPlay('ROCK');
+        humanPlay('paper');
 
 
     </script>
