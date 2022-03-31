@@ -8,30 +8,54 @@
 </head>
 <body>
 
+
     <script>
+
+// var computerChoiceResult;
 
         function computerPlay() {
 
             let computerChoice = getRandomInt(3);
+            var computerChoiceResult = 'blank';
             console.log(computerChoice)
             switch (computerChoice) {
             case 0:
-                console.log('Rock');
+                computerChoiceResult = 'Rock';
+                console.log(computerChoiceResult);
+                return computerChoiceResult;
                 break;
             case 1:
-                console.log('Paper');
+                computerChoiceResult = 'Paper'
+                console.log(computerChoiceResult);
+                return computerChoiceResult;
                 break;
             default:
-                console.log('Scissors');
+                computerChoiceResult = 'Scissors'
+                console.log(computerChoiceResult);
+                return computerChoiceResult;
+                break;
             }
         }
 
+        function humanPlay(humanChoice) {
+
+            if (humanChoice == 'rock' && computerPlay() == 'Paper') { 
+                console.log('You win, Rock beats paper') 
+            }
+            else if (humanChoice === 'rock' & computerPlay() === 'Rock') {
+                console.log('It was a tie')
+            }
+            else { 
+                console.log('catch all') 
+            }
+        }
 
         function getRandomInt(max) {
             return Math.floor(Math.random() * max);
         }           
 
-        computerPlay();
+        // computerPlay();
+        humanPlay('rock');
 
 
     </script>
