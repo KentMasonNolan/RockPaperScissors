@@ -11,39 +11,44 @@
 
     <script>
 
-// var computerChoiceResult;
-
         function computerPlay() {
 
             let computerChoice = getRandomInt(3);
-            var computerChoiceResult = 'blank';
+            var Result = 'blank';
             console.log(computerChoice)
             switch (computerChoice) {
             case 0:
-                computerChoiceResult = 'Rock';
-                console.log(computerChoiceResult);
-                return computerChoiceResult;
+                Result = 'Rock';
+                console.log(Result);
+                return Result;
                 break;
             case 1:
-                computerChoiceResult = 'Paper'
-                console.log(computerChoiceResult);
-                return computerChoiceResult;
+                Result = 'Paper'
+                console.log(Result);
+                return Result;
                 break;
             default:
-                computerChoiceResult = 'Scissors'
-                console.log(computerChoiceResult);
-                return computerChoiceResult;
+                Result = 'Scissors'
+                console.log(Result);
+                return Result;
                 break;
             }
         }
 
         function humanPlay(humanChoice) {
 
-            if (humanChoice == 'rock' && computerPlay() == 'Paper') { 
+            humanChoice = humanChoice.toLowerCase();
+
+            let computerChoiceResult = computerPlay();
+
+            if (humanChoice == 'rock' && computerChoiceResult == 'Paper') { 
                 console.log('You win, Rock beats paper') 
             }
-            else if (humanChoice === 'rock' & computerPlay() === 'Rock') {
+            else if (humanChoice === 'rock' && computerChoiceResult === 'Rock') {
                 console.log('It was a tie')
+            }
+            else if (humanChoice === 'rock' && computerChoiceResult === 'Scissors') {
+                console.log('You lose')
             }
             else { 
                 console.log('catch all') 
@@ -55,7 +60,7 @@
         }           
 
         // computerPlay();
-        humanPlay('rock');
+        humanPlay('ROCK');
 
 
     </script>
